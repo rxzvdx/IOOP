@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Card
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Card\ here.\r\n\r\n\ @author\ Antonio\ Rosado\r\n\ @version\ 3/18/2022\r\n
+comment1.params=player\ year
+comment1.target=Card(java.lang.String,\ int)
+comment1.text=\r\n\ Creates\ a\ baseball\ card\ based\ on\ player\ and\ year\ input\ from\ user\ as\ details.\r\n\ @param\ String\ player\ \ \ \ input\ for\ player\ field\r\n\ @param\ int\ year\ \ \ \ \ \ \ \ \ input\ for\ year\ field\r\n
+comment2.params=
+comment2.target=java.lang.String\ getPlayer()
+comment2.text=\r\n\ Return\ name\ of\ player\r\n\r\n\ @return\ \ \ \ player\ string\r\n
+comment3.params=
+comment3.target=int\ getYear()
+comment3.text=\r\n\ Return\ year\ of\ player\r\n\r\n\ @return\ \ \ \ year\ int\r\n
+comment4.params=
+comment4.target=java.lang.String\ getDetails()
+comment4.text=\r\n\ Return\ details\ of\ card\r\n\r\n\ @return\ \ \ \ details\ string\r\n
+comment5.params=player\ year
+comment5.target=void\ setDetails(java.lang.String,\ int)
+comment5.text=\r\n\ Sets\ details\ of\ the\ player\r\n\r\n\ @param\ String\ player\ \ \ \ input\ for\ player\ field\r\n\ @param\ int\ year\ \ \ \ \ \ \ \ \ input\ for\ year\ field\ \r\n
+numComments=6

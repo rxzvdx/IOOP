@@ -1,0 +1,69 @@
+Chapter 6
+Appendix I & J
+
+Elements of documentation:
+The documentation for each constructor and method should include:
+the name of the method
+the return type (@return)
+the parameter names and types (@param)
+a description of the purpose and function of the method
+a description of each parameter
+a description of the value returned
+
+class block comment, goes before class header. 
+comment right before constructors
+comment right before each method
+
+important java tags:
+@author		Author name(s)
+@param		Parameter name and description
+@return		Description of return value
+@see		Cross-reference
+@throws		Exception type thrown and the circumstances
+@version	Version description
+
+Methods:
+Getters aka accessors first
+Setters aka mutators after
+everything else
+
+Fields are private due to incapsulation, fields have to be private 
+because they should not be allowed to be manipulated. 
+
+When you import:
+Do not do 
+import java.util.*; because the asterisk imports all things from given
+library. 
+
+Just import each of your classes individually. 
+
+Constructor is always required as it initializes fields. 
+
+Code idioms:
+Use iterators with collections
+To iterate over a complete collection, use a for-each loop. When the
+collection must be changed during iteration, use an Iterator with a 
+while loop or a for loop, not an integer index. 
+
+Hit ctrl + space in bluej with cursor on dot for list of method suggestions
+*It also gives the java doc for it 
+
+
+Lab 4
+4 accessor methods for each field
+Add solution to error statements in warmer cooler setIncrement methods
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

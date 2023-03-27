@@ -1,0 +1,106 @@
+Midterm Study Guides
+
+Primitive types 
+byte, short, int, long, float, double, boolean, char
+
+Top area of bluej with boxes are classes
+Right area of bluej is the code pad
+Arrows in classes are called "uses" or "reference arrows"
+Where objects exist in bluej is called the "object bench"
+
+If it is a primitive data type that means the value of the primitive 
+data types are stored in the varibale itself
+
+Anything with double quotes is a string
+
+Int is the default data type for integer numbers
+Double is the default data type for real numbers
+
+Fields store value for an object
+Fields are also known as instance variables
+
+Constructors initialize an object and have the same name as their class
+
+Accessor methods always have a return type, returns a value of the type given 
+in the header. 
+Mutator methods alter the state of an object
+
+Local variables must be initialized at time of declaration
+
+Primtitive type values store the value in the object itself
+Reference types for objects don't hold values, the values are stored in a memory address
+in which the value is referenced 
+
+Single quotes is a char not string
+
+5%3 returns 2, because 5/3 has a remainder of 2.
+
+5.0%3 = 2.0 (double)
+The sign of mod follows the left operand tool 
+
+All operators are unary, binary, or trunary (based on how many operands
+they take)
+
+the dot operator (.) is for methods and right hand operand. It gets 
+invoked on the left hand operand which is an object. The object 
+is usually a variable that references an object or a class. 
+
+Important info about loops
+1. Declare and initialize local variables
+2. Condition of each variable 
+3. Retrieve 
+4. Mutation (each variable)
+
+Class diagraam in static view
+Static means the code does not change at runtime 
+Object diagrams are dynamic because they are time dependent 
+
+Value semantics ***
+There are two different locations and two different values.
+
+Overloading - just more than one 
+More than one function, parameter, variable, etc. 
+
+Null's physical value is a memory address of all zeroes 
+while it means there are no objects. Null is a value not a data type.
+null vs. void 
+null 
+Means undefined or no memory address is being pointed to
+Used in code to represent no object reference exists
+void 
+Means empty or no data type
+Used in place of the return type for a method when no value 
+is being returned
+
+Debugging - Stepping through the code line by line during execution
+and during that time observing at current state of variables values
+to see if it changes or doesn't change as you are expecting it to. 
+Once you find the error/bug, then fix it.
+
+Errors come in three different flavors 
+Syntax
+* Errors in the code text itself
+* Found when compiling with unrecognizable text
+* Fix by editing code
+
+Logic
+* Errors in the behavior of the program
+* Found when running with unexpected results
+* Fix by debugging and observing states
+
+Runtime
+* Errors which prohibit program from completing
+* Found when executing the program
+* Fix by tracing, debugging, observing and editing
+
+What does a breakpoint do?
+Pauses or halts the code before the line of code has been executed.
+
+Step vs step into buttons
+They both execute the next line of code
+Step takes the line as one whole line
+Step into will check for user defined methods and step into them.
+
+
+
+

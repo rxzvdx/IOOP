@@ -1,0 +1,316 @@
+Fields store values for an object
+Fields are also known as instance variables
+
+Constructors:
+public TicketMachine(int cost)
+{
+	price = cost;
+	balance = 0;
+	total = 0;
+}
+They initialize an object, and have the same name as their class
+
+
+Accessor methods provide info about an object:
+public int getPrice()
+{
+	return price;
+}
+Accessor methods always have a return type, not void
+It returns a value of the type given in the header
+Mutator methods alter the state of an object
+
+Constructor initializes all fields 
+
+Mutator changes state or value of a field
+MUTATOR:
+public void insertMoney(int amount)
+{
+	balance = balance + amount;
+} 
+The body can be better written as balance += amount;
+
+public is the visibility modifier 
+void is the return type
+insertMoney is the method name
+and what is in parenthesis is the formal parameter
+balance is the field being mutated
+= is the assignment statement
+compound assignment operators (+=, -=, *=, /=)
+
+Right clicking class on blueJ, the "new" refers to fields because of 
+parenthesis: 
+new ticketMachine()
+
+Typical set method
+public void setdiscount(int amount)
+{
+	discount = amount;
+}
+
+amount is an int because discount is an int in the fields, they have to match
+
+Protective mutators
+If private, protective mutators are used to protect fields from mutating 
+invalid values
+
+If I have enough money left, then I will go out for a meal
+Otherwise, I will stay home and watch a movie
+
+In pseudo code:
+if(I have enough money left) 
+{
+    I will go out for a meal;
+} 
+else 
+{
+    I will stay home and watch a movie;
+}
+
+Parameter checking: When parameters are passed in, check if they are valid
+
+Makes sure only positive values are inserted into the ticket machine
+through the insertMoney method:
+public void insertMoney(int amount)
+{
+    if(amount > 0) 
+    {
+        balance = balance + amount;
+    }
+    else 
+    {
+        System.out.println("Use a positive amount: " + amount);
+    }
+} 
+
+Condtional statements help avoid an inappropriate action
+
+Proper error statements:
+Error statement, what is wrong, how to fix it. 
+
+Refund method:
+
+public int refundBalance()
+{
+    // Return the amount left
+    return balance;
+
+    // Clear the balance
+    balance = 0;
+} 
+This is incorrect because a return statement essentially ends the method
+meaning it needs to be last.
+However this is not enough to make the code work, it will just continue to 
+return zero. 
+
+
+public int refundBalance()
+{
+    int oldBalance = balance;
+    balance = 0;
+    return oldBalance;
+} 
+
+Local variables MUST be initiliazed AT TIME of declaration
+If you don't it references something weird, random, not what you want
+Don't do:
+int oldBalance;
+oldBalance = balance;
+balance = 0;
+return oldBalance; 
+
+Primtitive type values store the value in the object itself *midterm question
+Reference types for objects don't hold values, the values are stored in a memory address
+in which the value is referenced *midterm quesition
+
+Int is the default for numeric data types
+Double is the default for real numbers
+Single quotes '' is a char, not string *midterm question
+
+Overloading is when there is more than one function, method, just
+remember more than one. 
+
+int val = (int) mean;
+casting forces "mean" to be an int. Say mean = 0.99, casting gets rid
+of .99 and makes mean = 0. Sometimes casting is useful, other times ^
+not so much.
+
+5/3 gives a result of 1 (int), this essentially means how many times three can
+fit into 5.
+
+5.0/3 provides 1.6666666666666667 (double) because the data type of 5 
+is different this time, its a double or a more precise numeric value.
+
+ 
+
+
+5%3 returns 2, because 5/3 has a remainder of 2.
+
+5.0%3 = 2.0 (double)
+The sign of mod follows the left operand tool *midterm questions ^
+
+.5 is wrong. if an answer of 0.5 is given, 0.5 (double) must be provided
+
+Curly braces are to code as parenthesis are to expresssions
+
+All operators are unary, binary, or trunary (based on how many operands
+they take)
+
+the dot operator (.) is for methods and right hand operand. It gets 
+invoked on the left hand operand which is an object. The object 
+is usually a variable that references an object or a class. 
+
+++ --, unary operator that overloads. (Takes one operand and 
+is more than one operation)
+
+age++ *best ones, take the least code
+age = age + 1
+age += 1		<--- All the same
+age = 1 + age
+++age **best ones, take the least code
+
+++ on the right is a post-increment, does not execute until everything
+on the left is done. 
+++ on the left is a pre-increment, it comes first.
+
+int age = 21;
+age
+21   (int)
+int newAge = age++;
+newAge
+21   (int)
+age
+22   (int)
+newAge = ++age;
+newAge
+23   (int)
+age
+23   (int)
+
+! is required to be paired with a true or false boolean, and flips it.
+! true = false
+! false = true
+
+'new' operator
+1. Goes and grabs memory (how much depends on the object)
+2. Calls for a constructor to initilaize fields
+3. Returns a reference or memory address of where newly created object
+is at. 
+
+Circle sun = new Circle();
+sun is now stores the memory address for whatever new Circle object
+was created. 
+
+== and != binary comparitive operators for primitive types ONLY.
+ex. 
+6 == 5 false
+6 != 5 true
+*cannot be used to compare objects
+
+if(num == 0) 
+* do not use one =, it assigns zero to num. It will technically run 
+and execute but you don't want that. It will always be true. 
+
+Theres one exception for comparitive operators being used for non
+primitive types:
+if (name == null) this is because null is a reference of zeroes, and said 
+reference is a memory address so it works.
+
+Accesor method calls do NOT require a semicolon at the end since they are expressions, not statements 
+**important ^
+EX:
+TicketMachine t1 = new TicketMachine(1000);
+t1.getBalance()
+0   (int)
+t1.insertMoney(500);
+t1.getBalance()
+500   (int)
+
+= is a method from the string class
+
+String	substring(int beginIndex)
+Returns a string that is a substring of this string.
+
+"John".substring(1,2);
+this returns "o" because 1 is inclusive, and 2 or the second parameter is
+exclusive. 
+
+if (num == 0)
+{
+	return 0;
+}
+else
+{
+	return 1;
+}
+
+return num  == 0 ? 0 : 1;
+
+true/false expression ? true result : false result
+
+Don't do:
+if(name.isEmpty<> == true)
+isEmpty is already returning a boolean, its redundant. 
+
+Also don't do:
+if(name.isEmpty<> || name == null) 
+if name is empty or name equals null is true
+if name is null, its going to try and execute empty on a null object and 
+not work. This results in a runtime exception.
+
+Swap them, its more efficient. 
+if(name == null || name.isEmpty<>)
+If written this way, if name equals null it will short circuit. Meaning
+if either one of them is true, the result will be true. If the first half
+is true, the code won't even look at name.isEmpty<> and return true. 
+
+-- equal to
+!- not equal to
+< less than
+> greater than
+<- less than or equal to
+>- greater than or equal to
+
+gives boolean result
+When you're testing for equality, you're testing for equality of values 
+for primitive types ONLY
+
+Operands	 &&		 ||             ^  
+   
+T T		  T		  T		F	
+
+T F		  F		  T		T 
+
+F T		  F		  T		T 
+
+F F		  F		  F		F 
+
+& one false will always return false, you need BOTH to be true for it to return
+true.
+|| "or" only needs one true for it to return true.
+^ carrot looks for exclusivity. If they are different (TF or FT) then it 
+will return true. 
+
+a % b == a - ((a /b) *b)
+
+8 % 3 
+2 (int)
+
+for integer n >= 0, what are all possible results of: 
+n % 5 
+range [0,4] hard brackets are inclusive
+
+what about -n % 5
+[-4,0]
+
+when you do mod, it returns what is left over after integer division. 
+The left hand operand is the whole, what's returned is the pieces left of
+the whole. 
+
+Primitive values are stored directly in a variable whereas objects are
+not stored directly in a variable. Instead, a reference to the object
+is stored. *IMPORTANT
+
+
+
+

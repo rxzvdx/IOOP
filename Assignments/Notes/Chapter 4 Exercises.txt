@@ -1,0 +1,404 @@
+Chapter 4 exercises
+
+4.1
+
+4.2
+You don't get an error when calling the removeFile(0) before any 
+files are added. However I do believe there should be an error as
+it does not make sense that the user can call the removeFile method
+with no files and it operates as if there are files present. 
+
+4.3
+When the listFile method is called after removing the file, nothing
+happens. Whereas if the file is present it will print in the terminal.
+I believe an error message would do some good to the method. 
+
+4.4
+private ArrayList<Book> library;
+
+4.5
+ArrayList<Student> cs101;
+
+4.6
+private ArrayList<MusicTrack> tracks;
+
+4.7
+library = new ArrayList<Book>();
+cs101 = new ArrayList<Student>();
+tracks = new ArrayList<MusicTrack>();
+
+Simplified to:
+library = new ArrayList<>();
+cs101 = new ArrayList<>();
+tracks = new ArrayList<>();
+
+4.8
+10
+
+4.9
+items.get(4) *remember the fifth element is 4 because the count starts
+at 0*
+
+4.10
+14
+
+4.11
+files.add(favoriteTrack);
+
+4.12
+dates.remove(2);
+
+4.13
+5 because the removal of 9 does not affect it due to it being later
+on in the colleciton, whereas the removal of 0 is before the 6th 
+index causing it to move back one and now hold the index of 5. 
+
+4.14
+public void checkIndex(int index) 
+{
+    if (index < 0 || index >= files.size())
+	{
+		System.out.println("The range is only valid from 0 to " + (files.size() - 1));
+	}
+}
+
+4.15
+public boolean validIndex (int index)
+{
+	if (index >= 0 && index < files.size()) 
+	{
+		return true;
+	}
+	else 
+	{
+		return false;
+	}
+}
+
+4.16
+/**
+     * List a file from the collection.
+     * @param index The index of the file to be listed.
+     */
+    public void listFile(int index)
+    {
+        if(validIndex(index)) {
+            String filename = files.get(index);
+            System.out.println(filename);
+        }
+    }
+
+/**
+     * Remove a file from the collection.
+     * @param index The index of the file to be removed.
+     */
+    public void removeFile(int index)
+    {
+        if(validIndex(index)) {
+            files.remove(index);
+        }
+    }
+
+Remember that you can call on the previously created method in the 
+method above ^ as parameters in the if statement to check validity.
+Doing so brings over the validity aspect of the validIndex method.
+The methods anove essentially say: "If validIndex is true/exists, 
+then *do this and that*".
+
+
+4.18
+public void listAllFiles(int index) 
+{
+	if(validIndex(index)) 
+	{
+		String filename = files.get(index);
+		System.out.println(files.get(0));
+		//as many lines as there is files, there may be a more efficient way of doing this
+		//see Note below
+	}
+}
+
+4.19
+^
+
+NOTE: remember
+for each element in collection do: 
+{
+	loop body
+}
+
+NOTE: efficient listAllFiles method
+public void listAllFiles() 
+{
+	for(String filename :  files) 
+	{
+		System.out.println(filename);
+	}
+}
+
+The print statement is executed repeatedly once for each element in the files ArrayList. If there
+were four files, it would be executed four times. 
+
+4.20
+
+4.21
+
+4.24
+public void listAllFiles() 
+    {   int position = 0; 
+        for(String filename : files) 
+        {
+            System.out.println(position + "; " + filename);
+            position ++;
+        }
+    }
+
+4.25
+The method functions as it intended when a correct file name is given. 
+However, if a string that does not exist in the file names is given 
+then nothing happens. 
+
+4.28
+for(Track track : tracks) 
+// the type is Track because its an ArrayList entitiled 
+ArrayList<Track> meaning its an object. So to create a 
+for each loop for said object and call it tracks, the 
+header above is the result. 
+
+4.29
+boolean found = false; // keys are not found
+while(!found) // while keys are not found
+{
+	if(the keys are in the next place) 
+	{
+		found = true; // then keys are found
+	}
+}
+
+4.30
+public void multiplesOfFive() 
+{
+int multiple = 0; 
+while (multiple >= 10 && multiple <= 95)
+	System.out.println(index);
+	multiple += 5;
+}
+
+4.31
+public void oneThruTen() 
+{
+	int sum = 0;
+	int num = 0;
+	while (num <= 10) 
+	{
+		sum += num;
+		num ++;
+	}
+System.out.println("The sum of numbers 1-10 is " + sum);
+}
+
+4.32
+public int sum (int a, int b) 
+{
+	int sum = 0;
+	int num = a;
+	while (num <= b) 
+	{
+		sum = sum + num;
+		num += 1;
+	}
+return sum;
+} 
+
+4.33 
+I dont do prime numbers 
+
+4.34
+
+4.35
+private int playCount;
+
+4.39
+/**
+ * Remove tracks whose titles match the search string.
+ * A partial match is used.
+ * @param title The string to be matched.
+ */
+ public void removeTitles(String title)
+ {
+ Iterator<Track> it = tracks.iterator();
+ while(it.hasNext()) {
+ Track t = it.next();
+ if(t.getTitle().contains(title)) {
+ it.remove();
+ }
+ }
+ }
+
+4.48
+public void close()
+ {
+ 	for(Lot lot : lots) 
+	{
+ 	System.out.println(lot.getNumber() + ": " + lot.getDescription());
+ 	// Include any details of a highest bid.
+ 	Bid highestBid = lot.getHighestBid();
+ 	if(highestBid != null) 
+	{
+ 	System.out.println(" Highest bidder: " + highestBid.getBidder().getName());
+ 	System.out.println(" Bid: " + highestBid.getValue());
+ 	}
+ 	else 
+		{
+ 	System.out.println(" Not sold");
+ 		
+		}
+ 	}
+ }
+
+4.49
+public ArrayList<Lot> getUnsold() 
+{
+	ArrayList<Lot> unsoldLots = new ArrayList<Lot>();
+	for(Lot lot : lots) 
+		{
+		Bid highestBid = lot.getHighestBid();
+		if(highestBid == null) 
+			{
+				unsoldLots.add(lot);
+			}
+		}
+		return unsoldLots;
+}
+
+4.51
+
+public Lot getLot(int lotNumber)
+    {
+        if((lotNumber >= 1) && (lotNumber < nextLotNumber)) {
+            // The number seems to be reasonable.
+            Lot selectedLot = lots.get(lotNumber - 1);
+            // Include a confidence check to be sure we have the
+            // right lot.
+            if(selectedLot.getNumber() != lotNumber) {
+                System.out.println("Internal error: Lot number " +
+                                   selectedLot.getNumber() +
+                                   " was returned instead of " +
+                                   lotNumber);
+                // Don't return an invalid lot.
+                selectedLot = null;
+            }
+            return selectedLot;
+        }
+        else {
+            System.out.println("Lot number: " + lotNumber +
+                               " does not exist.");
+            return null;
+        }
+    }
+
+public Lot getLot(int lotNumber) 
+{
+	Lot lot = null;
+	if(lots.size() > 0) 
+	{
+		lot = lots(0);
+		int nextIndex = 1;
+		while(lot.getNumber() != number && nextIndex < lots.size())
+		{
+			lot = lots.get(nextIndex);
+			nextIndex++;
+		}
+	}
+	if(lot == null || lot.getNumber() != number) 
+	{
+		System.out.println("Lot number: " + number + " does not exist");
+		return null;
+	}
+	else 
+	{
+		return lot;
+	}
+}
+
+4.52
+/**
+ * Remove the lot with the given lot number.
+ * @param number The number of the lot to be removed
+ * @return The Lot with the given number, or null if
+ * there is no such lot.
+ */
+ public Lot removeLot(int number)
+// Find lot with the given number
+	Lot lot = getLot(number); // call on get lot method with number as param
+	if(lot != null)
+	{	
+		lots.remove(lot); //removes specified lot if not null
+	}
+	return lot;
+}
+
+4.54
+/**
+ * Determine the number of members who joined in the
+ * given month
+ * @param month The month we are interested in.
+ * @return The number of members.
+ */
+public int joinedInMonth(int month)
+{
+	memberCount = 0; // we don't know any members date of joining yet
+	if month <1 || month > 12) 
+	{
+		System.out.println("Month " + month + " is out of range. " + 
+		"It must be between 1-12.");
+	}
+
+	else 
+	{
+		for(Membership member : members) 
+		{
+			if(member.getMonth() == month) 
+		{
+			count++; // now we have a member and a month so
+				// keep count of that
+			}
+		}
+	}
+	return count;
+}
+
+4.55
+/**
+* Remove from the club’s collection all members who 
+ * joined in the given month,
+* and return them stored in a separate collection object.
+* @param month The month of the membership.
+* @param year The year of the membership.
+* @return The members who joined in the given month and year.
+*/
+public ArrayList<Membership> purge(int month, int year) 
+{
+	ArrayList<Membership> purged = new ArrayList<Membership>();
+	if(month < 1 || month > 12) 
+	{
+		System.out.println("Month " + month + " is out of range. " + 
+		"It must be between 1-12.");
+	}
+	else 
+	{
+		Iterator<Membership> it = members.iterator();
+		while(it.hasNext()) // while there is a next thing to iterate
+		{
+			Membership member = it.next(); // go to next thing
+			if(member.getMonth() == month && member.getYear() == year) 
+			{	
+				// remember you can only use the remove method from iterator
+				it.remove(); //removes all members from specified date and year
+				purged.add(member); //returns "purged" members in a seperate collection
+			}
+		}
+	}
+}
+
+4.56

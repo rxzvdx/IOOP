@@ -1,0 +1,22 @@
+//EX 2.54 saving = price * discount;
+        //EX 2.55 mean = total / count;
+        /*
+         * EX 2.57 
+         * if(price > budget) 
+         * {
+             System.out.println("Too expensive.");
+                       }
+            else {
+             System.out.println("Just right."); 
+                }
+         */
+        /* 
+         * if(price > budget) 
+         * {
+             System.out.println("Too expensive. Your budget is only: " + budget);
+            }
+           
+            else {
+             System.out.println("Just right.");
+            } 
+         */

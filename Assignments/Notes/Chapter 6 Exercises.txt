@@ -1,0 +1,176 @@
+      Ex 6.3
+
+String method startsWith(String prefix)
+returns true or false if given String prefix is the start of any String
+
+startsWith(String prefix, int toffset)
+Tests if the substring of a string with specified index starts with the 
+given prefix, returns true or false
+
+Ex 6.4
+endsWith(String suffix)
+Tests if the string ends with the given suffix
+
+Ex 6.5
+length() returns the number of characters in a string
+
+Ex 6.10
+equals(Object  o) compares the string to the specified object, 
+returns true or false
+
+Ex 6.12
+Random random = new Random()
+
+Ex 6.15
+import java.util.Random;
+...
+Random rand = new Random();
+...
+int num = rand.nextInt();
+int value = 1 + rand.nextInt(100);
+int index = rand.nextInt(list.size());
+returns a value in between 0-100 randomly
+
+Ex 6.16
+generate a random value from [1-6] *there are 7 values in there
+public int throwDie()
+{
+	return rand.nextInt(7) + 1;
+}
+
+Ex 6.20
+rand.nextInt(max - min + 1) + min
+
+Ex 6.21
+secureRandom
+This class provides a cryptographically strong random number generator (RNG).
+A cryptographically strong random number minimally complies with the statistical 
+random number generator tests specified in FIPS 140-2, Security Requirements for 
+Cryptographic Modules, section 4.9.1. Additionally, SecureRandom must produce 
+non-deterministic output. Therefore any seed material passed to a SecureRandom 
+object must be unpredictable, and all SecureRandom output sequences must be 
+cryptographically strong.
+
+Ex 6.24
+Hashmap - pairs of info for each element or entry 
+(Key, Value) *object types
+Keys cannot match, values can 
+Every unique key corresponds to a value
+NO order, NO duplicates 
+important methods are get and put
+
+Ex 6.25
+get(Object key) returns the value to which the specified key is mapped or null if the map
+contains no value for the key
+put(K key, V value) associates the specified value with the specified map to this map
+
+Ex 6.26
+size() returns the number of key value mappings in this map
+
+Ex 6.27
+public class mapTester
+{
+    // instance variables - replace the example below with your own
+    private HashMap<String, String> contacts; 
+
+    /**
+     * Constructor for objects of class mapTester
+     */
+    public mapTester()
+    {
+        contacts = new HashMap<>();
+    }
+    
+    public void enterNumber(String name, String number) 
+    {
+        contacts.put(name, number); 
+    }
+    
+    public String lookupNumber(String name) 
+    {   String number = contacts.get(name);
+        String errorMsg = "Error";
+        if(number != null)
+        {
+            return number;
+        }
+        else
+        {
+            return errorMsg;
+        }
+    }
+}
+
+Ex 6.36
+String scary = "boo":
+scary.split(0);
+returns "b"
+
+how to split at tab
+split("\t");
+
+String[] wordArray = inputLine.split(" ");  // split at spaces
+
+Wrapper classes
+Integer iwrap = new Integer(ix);
+now it can easily be stored in an ArrayList<Integer> collection
+
+autoboxing is done automatically
+
+private ArrayList<Integer> markList;
+public void storeMarkInList(int mark)
+{
+	markList.add(mark);
+}
+
+Ex 6.48
+putIfAbsent(K key, V value)
+If the specified key is not already associated with a value or 
+is mapped to null, associates it with the given value and returns
+null, else returns the current value. 
+
+Ex 6.49
+public void goodbyeCount(HashSet<String> input)
+    {
+        for(String word : input) {
+            int counter = counts.getOrDefault(word, 0);
+            if(input.equals("goodbye"))
+            {
+                counts.put(word, counter + 1);
+            }
+            else
+            {
+                counts.put(word, 1);
+            }
+        }
+    }
+
+Ex 6.77
+static int max(int a, int b)
+
+Ex 6.78
+Because they perform tasks they don't necessarily rely on objects of 
+a class and can be used throughout the class without wasting memory
+
+Ex 6.79
+public int beginCount()
+    {
+        int count = 0;
+        boolean counting = false; 
+        while(count < 10000)
+        {
+            count++;
+            if(count >= 10000)
+            {
+                counting = false;
+            }
+            else
+            {
+                counting = true; 
+            }
+        }
+        System.out.println(System.currentTimeMillis());
+        return count; 
+    }
+
+
+

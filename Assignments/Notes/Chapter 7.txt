@@ -1,0 +1,146 @@
+Fixed-sized collections
+
+Can't dynamically manage memory because it's fixed in size
+Objects have no methods
+
+private int[] hourCounts;
+indicated hourCounts is of type integer array
+
+int would be the base type of the array
+the array object would store type int values
+
+int hourCounts; // single int variable
+
+int[] hourCounts; // int-array variable
+
+public class LogAnalyzer 
+{
+	private int[] hourCounts;
+	// array variable declaration
+	private LogFileReader reader;
+}
+
+	public LogAnalyzer() 
+	{
+		hourCounts = new int[24]; 
+		// array object creation specifies size
+		reader = new LogFileReader();
+	}
+
+how to access single value(s) in array
+hourCounts[0] = *first index
+
+Can't call a method on a primitive data type
+System.out.println(item[1].getName()); // has to be a numeric value ^
+
+Array literals
+The size is inferred from the data:
+private int[] numbers = {3, 15, 4, 5}; // do this in labs 
+
+Array literals in this from can only be used in declarations and NOT
+like this:
+numbers = {3, 15, 4, 5}
+
+Related uses require new:
+numbers = new int[] {3, 15, 4, 5};
+
+private int[] numbers = { 3, 15, 4, 5 };
+
+int n = numbers.length;
+
+length is NOT a method call
+length is a field rather than a method
+It is fixed-size and can NOT be changed 
+
+
+The hourCounts field is necessary to store the analysis of the 
+access data
+hourCounts = new int[24];
+
+The constructor creates an array object of 24 integers for the 
+hourCounts field
+hourCounts.length  // equals 24
+
+Each of the 24 integer elements represent the number of accesses 
+made within that particular hour (in a 24-hour day)
+hourCounts[hour]++; 
+
+A larger integer value = more accesses 
+
+For-each loops can be used to access every element in the array
+without adding/removing any elements
+
+for(int value: hourCounts) 
+{
+	System.out.println(value); // this is the value NOT index 
+}
+
+dont do S.O.P.L(hourCounts[value]);
+
+for loop pseudo-code
+for(initialization; condition; post-body action) {
+    statements to be repeated
+}
+
+equivalent in while-loop form
+initialization;
+while(condition) {
+    statements to be repeated
+    post-body action
+} 
+
+for loop is total abstraction whereas while loop has NO abstraction
+user has to do everything in while loop
+
+java example
+for(int hour = 0; hour < hourCounts.length; hour++) {
+    System.out.println(hour + ": " + hourCounts[hour]);
+}
+
+while loop:
+int hour = 0;
+while(hour < hourCounts.length) {
+    System.out.println(hour + ": " + hourCounts[hour]);
+    hour++;
+}
+
+*you can make the mutation in the while more efficient by:
+System.out.println(hour + ": " + hourCounts[hour++]);
+
+you can leave the first and third part in a for loop blank
+but NEVER the second
+
+more efficient for loop
+for(int hour = 0; hour < hourCounts.length ;   ) 
+{
+	System.out.println(hour + ": " + hourCounts[hour++]);
+}
+
+Arrays class
+java.util.Arrays contains static utility methods for processing arrays
+copyOf
+binarySearch
+fill
+sort
+
+which loop should I use?
+
+for-each:
+iterate over ALL elements in a collection
+no adding or removing of any elements
+no loop counter (index) is needed
+
+for:
+definite iteration with known start and end
+increment amount may be flexible (> 1)
+loop counter (index) is needed
+
+while:
+indefinite iteration with unknown # of iterations
+loop end can be determined by some condition(s)
+
+ Non-collections:
+ use a for or while loop
+ Removing elements:
+ (if examining ALL elements) use for with Iterator 
+ (if stopping before the collection ends) use while

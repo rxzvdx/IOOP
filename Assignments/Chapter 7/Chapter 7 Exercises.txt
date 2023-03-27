@@ -1,0 +1,134 @@
+Ex 7.1
+10-18
+
+Ex 7.2
+Array<People>;
+
+Ex 7.3
+boolean[] vacant;
+
+7.4
+5 times
+
+7.5
+int[] counts;
+boolean[] occupied; 
+
+7.6
+double[] readings = new double[60];
+String[] urls = new String[90];
+TicketMachine[] machines = TicketMachine[5];
+
+7.7
+no string objects are created, it creates a fixed size collection
+that can hold up to 20 strings. 
+
+7.8
+double[] prices = new double[50];
+
+7.9
+index out of bounds exception error
+
+7.10
+public void printHourlyCounts()
+    {
+        System.out.println("Hr: Count");
+        int hour = 0;
+        while(hour < hourCounts.length) 
+        {
+            System.out.println(hour + ": " + hourCounts[hour]);
+            hour++;
+        }
+    }
+
+7.11
+/**
+ * Print all the values in the marks array that are
+ * greater than mean.
+ * @param marks An array of mark values.
+ * @param mean The mean (average) mark.
+ */
+ 
+public void printGreater(double marks, double mean)
+{
+ 	for(index = 0; index < marks.length; index++) 
+	{
+		if(marks[index] > mean) 
+		{
+             System.out.println(index);
+		}
+	} 		
+}
+
+7.12
+
+7.13
+/**
+* Return the number of accesses recorded in the log file
+*/
+ public int numberOfAccesses()
+ {
+ 	int total = 0;
+ // Add the value in each element of hourCounts to total.
+ 	for(int hourCount : hourCounts) 
+	{
+ 		total = total + hourCount;
+ 	}
+ 	return total;
+ }
+
+7.15
+public int busiestHour()
+{
+	int busiestHour = 0;
+	for(int hour = 1; hour < hourCounts.length; hour++) 
+	{
+		if(hourCounts[hour] > hourCounts[busiestHour]) 
+		{
+			busiestHour = hour;
+		}
+	}
+	return busiestHour;
+}
+
+7.16
+/**
+     * Return quietst hour of the day // ex. 7.16
+     */
+    public int quitestHour()
+    {
+	int quitestHour = 0;
+	for(int hour = 1; hour < hourCounts.length; hour++) 
+	{
+		if(hourCounts[hour] < hourCounts[quitestHour]) 
+		{
+			quitestHour = hour;
+		}
+	}
+	return quitestHour;
+    }
+
+7.17
+The first instance that is found is returned.
+
+7.23
+public void listAllFiles()
+    {
+        for(int index = 0; index < files.size(); index++ ) {
+            System.out.println(files.get(index));
+        }
+    }
+
+7.28
+i = 0 ? left = 0 : left = state[i - 1];
+
+i + 1 < state.length ? tight = state[i + 1] : right = 0;
+
+
+
+
+
+
+
+
+

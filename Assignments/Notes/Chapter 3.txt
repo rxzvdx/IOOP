@@ -1,0 +1,342 @@
+If statements:
+
+if (age == 0)
+{
+	do this
+}
+
+else if (age < 0)
+{
+	do neg
+}
+else 
+{	
+	do pos
+}
+}
+
+Switch:
+
+default and breaks are required for midterm*
+
+switch(expression) 
+{
+case value: statements;
+		break;
+case value: statements;
+		break;
+further cases possible
+default: statements;
+		break;
+}
+expression has to match case value
+
+switch(day) {
+case 1: dayString = "Monday";
+		break;
+case 2: dayString = "Tuesday";
+		break;
+case 3: dayString = "Wednesday";
+		break;
+case 4: dayString = "Thursday";
+		break;
+case 5: dayString = "Friday";
+		break;
+case 6: dayString = "Saturday";
+		break;
+case 7: dayString = "Sunday";
+		break;
+default: dayString = "Invalid day";
+		break;
+}
+In this case, the type for "day" is int because the value of the cases
+are numbers. Don't get confused and think its a string. 
+
+switch(dow.toLowerCase()) {
+case "mon":
+case "tue":
+case "wed":
+case "thu":
+case "fri":
+	goToWork();
+	break;
+case "sat":
+case "sun":
+	stayInBed();
+	break;
+}
+
+This is of type string because of the method being invoked 
+Always put a default, the second switch up above does not 
+contain one. 
+
+Loops
+
+while()
+{
+	expression
+}
+
+in parens, a variable is required. It cannot be static, meaning it has
+to be dynamic and not always be true or false. 
+
+while (variable) 
+{
+	mutable var
+	var = ... *assignment operator
+}
+
+Important info about loops
+1. Declare and initialize local variables
+2. Condition of each variable 
+3. Retrieve 
+4. Mutation (each variable)
+
+System.out.print("Please enter a filename: ");
+input = readInput(); *1
+while (input == null) { *2
+System.out.print("Please try again: "); *3
+input = readInput(); *4
+}
+
+do-while
+
+do {
+	statements
+} while(expression); *dont forget semi-colon on midterm
+
+do {
+	System.out.print("Please enter a filename: ");
+	input = readInput();
+} while(input == null);
+
+for-each loop
+
+for(variable-declaration : collection) {
+	statements
+}
+
+for(String note : list) {
+	System.out.println(note);
+}
+
+for loop
+
+for(int i = 0; i < text.size(); i ++) {
+	System.out.println(text.get(i));
+}
+
+performs all three things a while loop could perform in 
+way more lines.
+
+int i = 0;
+while (i < text.size();) {
+	System.out.println(text.get(i));
+	i++;
+} 
+
+the above are both the same thing and perform exactly the
+same, one instance is just more efficient than the other. 
+
+i + 1 and i++ are NOT the same
+i + 1 is one operation while i++ is two. i++ adds a value to i, 
+then stores it. 
+
+i += 1 
+i++
+i = i + 1
+
+all do the same
+
+*** Hitting ctrl + space after putting a dot will display all methods 
+you can invoke on the left hand operand. 
+
+clock:
+hours has a limit of 0 to 23 with a total of 24 values
+mintues has a limit of 0 to 59 with a total of 60 values
+
+contructor for NumberDisplay
+public class NumberDisplay
+{
+    private int limit;
+    private int value;
+
+    public NumberDisplay(int limit)
+    {
+        this.limit = limit;
+        value = 0;
+    }
+    ...
+}
+
+Implementation of ClockDisplay
+
+public class ClockDisplay
+{
+    private NumberDisplay hours;
+    private NumberDisplay minutes;
+
+    Constructor and
+    methods omitted.
+}
+
+Class diagraam in static view 
+ClockDisplay has arrow pointing to NumberDisplay class below it
+
+Static means the code does not change at runtime *MIDTERM QUESTION
+
+Object diagrams are dynamic because they are time dependent *MIDTERM QUESTION
+
+Value semantics ***
+There are two different locations and two different values.
+
+int a;
+int b;
+a = 32;
+b = a;
+a = a + 1;
+System.out.println(b);
+
+The output for these lines of code is 32 because although a is now 33,
+b remains as 22 because they are two different values. 
+
+Person a;
+Person b;
+a = new Person("Everett"); // This is a string literal btw
+b = a;
+a.changeName("Delmar");
+System.out.println(b.getName());
+
+What happens here is that because the type of the fields are not 
+primitive and they are object types, the output ends up being "Delmar".
+So instead of value semantics taking place, reference semantics takes 
+place. Reference semantics takes the memory address initially referenced
+and makes the second object reference the same memory address.
+
+Two names referencing same object: alias
+If you change one, you change the other. 
+
+ALL STRINGS ARE IMMUTABLE
+That means the string object never changes the string value, but
+what it does is throw the value into its own object.
+
+String output VS String values
+
+Output does NOT have quotation marks
+Values DO have quotation marks
+
+public void increment()
+{
+    value = value + 1;
+    if(value == limit) {
+        // Keep the value within the limit.
+        value = 0;
+    }
+}
+
+This comes from the NumeberDisplay class because it references
+the fields in the NumberDisplay class. 
+
+public void increment()
+{
+    value = (value + 1) % limit;
+}
+
+This is a more efficient version of the above lines of code.
+Here 60 & 60 = 0 so it does the same as the above. 
+
+updateDisplay(); references a method from another class
+public void timeTick()
+{
+    minutes.increment();
+    if(minutes.getValue() == 0) { 
+        // it just rolled over!
+        hours.increment();
+    }
+    updateDisplay();
+}
+
+
+Internal method calls 
+
+/**
+ * Update the internal string that
+ * represents the display.
+ */
+private void updateDisplay()
+{
+    displayString = 
+        hours.getDisplayValue() + ":" + 
+        minutes.getDisplayValue();
+}
+
+If there is a method you want nobody else to have access to you
+make it private
+
+The this keyword
+Used to distinguish parameters and fields of the same name
+this could also be used as a reference to the invoking object
+instead of method calls
+
+public ClockDisplay (int limit)
+{
+	this.limit = limit;
+	value = 0;
+}
+
+Overloading - just more than one *MIDTERM QUESTION
+More than one function, parameter, variable, etc. *MIDTERM QUESTION
+In this.limit = limit; 
+this references the object you are in hence "THIS" object. 
+The field you are referencing is on the left hand operand 
+while the parameter is on the right. this. in front of something
+will differntiate that the thing after this. is a field. 
+
+Null's physical value is a memory address of all zeroes 
+while it means there are no objects. Null is a value not a data type.
+
+null vs. void *MIDTERM QUESTIONS
+
+null 
+Means undefined or no memory address is being pointed to
+Used in code to represent no object reference exists
+
+void 
+Means empty or no data type
+Used in place of the return type for a method when no value 
+is being returned
+
+Debugging - Stepping through the code line by line during execution
+and during that time observing at current state of variables values
+to see if it changes or doesn't change as you are expecting it to. 
+Once you find the error/bug, then fix it. *MIDTERM DEFINITION
+
+Errors come in three different flavors *MIDTERM QUESTIONS BELOW
+
+Syntax
+* Errors in the code text itself
+* Found when compiling with unrecognizable text
+* Fix by editing code
+
+Logic
+* Errors in the behavior of the program
+* Found when running with unexpected results
+* Fix by debugging and observing states
+
+Runtime
+* Errors which prohibit program from completing
+* Found when executing the program
+* Fix by tracing, debugging, observing and editing
+
+
+
+
+
+
+
+
+
+
+
+
+

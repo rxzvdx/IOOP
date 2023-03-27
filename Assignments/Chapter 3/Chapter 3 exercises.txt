@@ -1,0 +1,191 @@
+Chapter 3 exercises
+
+Ex. 3.1
+See notebook
+
+3.2
+A class diagram can only be manipulated if something in the code is changed like a class is removed, renamed, etc.
+
+3.3
+An object program is changed when an object is called, values are given to certain objects, or methods are called. 
+
+3.4
+private Instructor tutor;
+
+3.8
+typing nd.getValue() prints Error: non-static method getValue() cannot be referenced from a static 
+context. This error appears because the class name NumberDisplay has been used incorrectly to try
+and call the getValue metho, instead of the variable named nd. 
+
+3.9
+Typing nd.setValue(int 5); says Error: '.class' expected. *figure out why it gives that message
+
+3.12
+This allows the user to either set the replacement value past 24 which would not make sense, or 
+allow the replacement value to not be greater than or equal to zero since only one part of the
+if statement has to be true to be considered true. 
+
+3.13
+! (4 < 5)
+false   (boolean)
+! false
+true   (boolean)
+(2 > 2) || ((4 == 4) &&  (1 < 0))
+false   (boolean)
+(2 > 2) || (4 == 4) && (1 < 0)
+false   (boolean)
+(34 != 33) && ! false
+true   (boolean)
+
+3.14 
+(a && b) || (a != b) a and b are both true or a and b are both false
+
+3.15 
+Ask
+
+3.16 
+Ask
+
+3.17
+If you create a number display with limit 800, the getDisplayValue shows a value of "00"
+meaning it only grabs the last two digits of 800.
+
+3.18
+No. Say for instance you use this order in the line of code and set "11" as the value,
+it returns "11" as the value. this is because the "" is simply an empty value so 
+no matter the order, the value will show by itself regardless. 
+
+3.19
+
+3.20
+The modulo operator (%) returns the remainder of an integer division
+
+3.21
+2 (int)
+
+3.22
+When you use a negative number, the result is also negative.
+
+3.23
+range [0,4]
+
+3.24
+positive infinity? idk ask
+
+3.25
+The increment method is a mutator method that mutates the "value" variable. It changes the value 
+variable to hold the result of the value incremented by 1 and mod that answer by the limit.
+
+3.26
+
+3.27
+It starts at 00:00 because time "resets" after the 24 hours has been reached and begins anew
+
+3.29 
+You need to click the timeTick method 60 times to reach 01:00. You could also set it manually with the
+setTime method.
+
+3.30
+Rectangle window = new Rectangle (int 1, int 2);
+
+3.31 
+The second constructor is overloaded, as it achieves a different task with
+a set amount of parameters that are more than one. It also calls on the 
+setTime method with hour and minute as its parameters. 
+
+3.32
+The two constructors both create new hours and minutes objects, while the first 
+one updates the display, and the second one calls for setTime.
+
+3.33
+public void print(String filename, boolean)
+{
+	p1.println("java_file1", true);
+	p1.println("java.txt", false);
+}
+
+public int getStatus(int delay)
+{
+	p1.getStatus(30);
+	p1.getStatus(35);
+}
+
+3.34
+Two square objects, one triangle, one circle, and one person.
+
+3.35
+changeSize, moveHorizontal, moveVerical, makeVisible
+
+3.36
+No internal method calls
+
+3.37
+Ask teach
+
+3.38
+
+3.39 
+The first method is easier and more efficient because with the second method 
+you would have to change each value passed the 12th hour to be its value on a 12 hour clock which 
+is not efficient as simply changing them all at once.
+
+3.40 
+public class Tree
+{
+    // instance variables - replace the example below with your own
+    private Triangle leaves;
+    private Square trunk;
+
+    /**
+     * Constructor for objects of class Tree
+     */
+    public Tree()
+    {
+        leaves = new Triangle();
+        trunk = new Square();
+    }
+}
+
+3.41
+public class Tree
+{
+    // instance variables - replace the example below with your own
+    private Triangle leaves;
+    private Square trunk;
+    private boolean isVisible;
+    
+    /**
+     * Constructor for objects of class Tree
+     */
+    public Tree()
+    {
+        leaves = new Triangle();
+        trunk = new Square();
+        setup();
+    }
+
+    public void setup()
+    {   
+        trunk.moveHorizontal(-90);
+        trunk.moveVertical(70);
+        trunk.changeSize(50);
+        trunk.changeColor("brown");
+        trunk.makeVisible();
+        
+        leaves.moveHorizontal(40);
+        leaves.moveVertical(-100);
+        leaves.changeSize(150, 120);
+        leaves.changeColor("green");
+        leaves.makeVisible();
+    }
+}
+
+
+3.42
+
+3.43
+
+
+
+
+

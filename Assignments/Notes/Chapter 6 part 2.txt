@@ -1,0 +1,300 @@
+Debug with logging
+
+
+Print statements require removal before production
+Logging provides a more effective alternative
+Import classes/interfaces with core logging facilitate
+	   import java.util.logging.Logger;
+	   import java.util.logging.Level;
+Declare and initialize the logger object for a class
+                Logger logger =    
+      Logger.getLogger(ClassName.class.getName());
+Instead of System.out.println statements, now use: 
+	        void log(Level level, String msg)    
+   logger.log(Level.WARNING, "Name is INVALID");
+Static Level constants in descending order:
+SEVERE (highest value)
+WARNING
+INFO
+CONFIG
+FINE
+FINER
+FINEST (lowest value)
+
+public class SupportSystem 
+{ 
+    private InputReader reader; 
+    private Responder responder;    
+
+    /**     
+     * Creates a technical support system.     
+     */ 
+    public SupportSystem() 
+    { 
+        reader = new InputReader(); 
+        responder = new Responder(); 
+    }
+
+    ...
+
+boolean finished = false;
+
+while(!finished) {
+
+    do something
+
+    if(exit condition) {
+        finished = true;
+    }
+    else {
+        do something more
+    }
+}
+
+public void start() 
+{ 
+	boolean finished = false;
+
+	printWelcome(); 
+	while(!finished) { 
+	  String input = reader.getInput();
+
+	  if(input.startsWith("bye")) { 
+		finished = true; 
+	  }
+	  else { 
+		String response = responder.generateResponse();
+		System.out.println(response); 
+	  }
+	} 
+	printGoodbye();
+}
+
+**bad, input is ignored by Responder in this version
+
+startsWith
+public boolean startsWith(String prefix)
+Tests if this string starts with the specified prefix
+Parameters:
+prefix - the prefix
+Returns:
+true - if the String startsWith the prefix
+false – otherwise the String does not
+
+boolean contains(char c)
+boolean endsWith(String s)
+int indexOf(String s)
+int indexOf(String s, int i)
+String substring(int b)
+String substring(int b, int e)
+String toUpperCase( )
+String trim( )
+
+String method
+String toUpperCase()
+
+Incorrect use
+input.toUpperCase();
+
+Correct use
+input = input.toUpperCase();
+if(input.toUpperCase().contains())
+
+Using random & date
+import java.util.Random;
+import java.util.Date
+...
+Date date = new Date(); // not necessary if you declare in line below
+Random rand = new Random(new Date.getTime()); // makes it more random
+...
+int num = rand.nextInt();
+int value = 1 + rand.nextInt(100);
+int index = rand.nextInt(list.size());
+
+generate a random value from [11-14] *there are 4 values in there
+rand.nextInt(4) is wrong because it gives values from 0-3
+
+rand.nextint(4) + 11
+
+[min - max]
+rand.nextInt(max - min + 1) + min *IMPORTANT
+= [min - max]
+
+
+Selecting a random response
+
+private Random randomGenerator;
+private ArrayList<String> responses;
+
+public Responder()
+{
+   randomGenerator = new Random();
+   responses = new ArrayList<String>();
+   fillResponses();
+}
+
+private void fillResponses()
+{
+   …fill ArrayList responses with a selection of response strings…
+}
+
+public String generateResponse()
+{
+   int index = randomGenerator.nextInt(responses.size());
+   return responses.get(index);
+}
+
+Fill ArrayList of Responses 
+
+private ArrayList<String> responses;
+
+public Responder()
+{
+  randomGenerator = new Random();
+  responses = new ArrayList<String>();
+  fillResponses();
+}
+
+public void fillResponses()
+{
+  responses.add("That sounds odd. Could you describe \n" + "that problem in more detail?"); 
+  responses.add("No other customer has ever \n" + "complained about this before. \n" + 
+		"What is your system configuration?"); 
+   responses.add("That’s a known problem with Vista." + "Windows 7 is much better."); 
+  responses.add("I need a bit more information on that."); 
+  responses.add("Have you checked that you do not \n" + "have a dll conflict?");
+  responses.add("That is explained in the manual. \n" + "Have you read the manual?"); 
+  responses.add("Your description is a bit \n" + "wishy-washy. Have you got an expert \n" + 
+		"there with you who could describe \n" + "this more precisely?"); 
+  responses.add("That’s not a bug, it’s a feature!"); 
+  responses.add("Could you elaborate on that?");
+}
+
+Hashset - NO order, NO duplicates
+Hashmap - pairs of info for each element or entry 
+(Key, Value) *object types
+Keys cannot match, values can 
+Every unique key corresponds to a value
+NO order, NO duplicates 
+
+Using sets
+
+import java.util.HashSet;
+
+...
+HashSet<String> mySet = new HashSet<String>();
+
+mySet.add("one");
+mySet.add("two");
+mySet.add("three");
+
+for(String element : mySet) {
+    do something with element
+}
+
+HashSet() constructor no params
+Constructs a new empty set, the backing HashMap instance 
+has default initial capacity (16) and load factor (0.75)
+At 75% capacity (75% of 16 is 12 so at 12), gets 16 more for capacity. 
+
+Increase load factor as you increase capacity
+
+HashSets are collections
+
+ArrayList vs. HashSet
+
+Similarities
+Contain a collection of objects
+Add objects (.add method)
+Remove objects (.remove method)
+Number of elements (.size method)
+for-each for iteration AND
+Iterator ability (.iterator method)
+
+Differences
+HashSet objects are unique, while an ArrayList can have 
+duplicate objects
+HashSet objects are not ordered, while ArrayList objects are ordered
+
+HashMap has put(key, value) 
+returns previous value if there was one, if not then returns null
+
+remove(object key)
+removes the mapping for the specified key from this map is present
+returns v 
+
+remove(object key, object value)
+removes the entry for the specified key only if it is currently
+mapped to the specified value
+returns boolean
+
+isEmpty() returns boolean
+size() returns size of hashMap
+
+get(key) returns value of key, if no key returns null
+
+How do you iterate over a hashMap?
+There's three ways:
+keySet() returns all keys
+values() returns a collection of values
+entrySet() returns a set view of the mappings in the map
+
+.split(String regex)
+splits this string around matches of the given regular
+expression. 
+String[] wordArray = inputLine.split(" ");
+For example, "This is slow"
+Then the first instance of where a " " is in the string
+is thrown into a fixed size String[] array. 
+The array will contain "this" "is" "slow".
+
+String[] wordArray = inputLine.split("\\s");
+\\s = any single white space will be split
+
+String[] wordArray = inputLine.split("\\s+");
+*use on lab, means any white space or MORE
+
+static - class variable
+final - constant 
+class constant is 
+public static final
+
+Lab notes
+two fields
+String name formatted 
+string employees hashmap, id values
+split creates id
+min 100
+max 999
+bob jones Id = BJ(random three #s between min-max)
+private static final MIN = 100
+private static final MAX = 999
+Random random = new Random.getTime(); 
+instantiate hashmap at time of declaration
+constructor takes unformatted String name
+formatString internal method
+formatString private
+one line of code ternary
+if != null .trim().replaceAll().something else
+generateId utility method private
+five lines of code 
+local variable decs for first two lines
+String = " ";
+String[] name =
+formatString.split("\\s+");
+for loop 
+one line of code
+initials local variable concatinate with a randomly generated #
+randomGenerator.nextInt *refer to line of code above from Monday
+put parens around so it does not do min first
+addEmployee check for null and .trim().isEmpty()
+log warning 
+
+
+
+
+
+
+
+
+

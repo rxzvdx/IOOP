@@ -1,0 +1,34 @@
+#BlueJ class context
+comment0.target=company
+comment0.text=\r\n\ Company\ class\ creates\ a\ company\ with\ employees,\ their\ respective\ IDs,\ and\ \r\n\ allows\ manipulation\ for\ the\ above\ elements.\ \r\n\r\n\ @author\ Antonio\ Rosado\r\n\ @version\ 4/12/22\r\n
+comment1.params=name
+comment1.target=company(java.lang.String)
+comment1.text=\r\n\ Initializes\ company\ name\r\n\ @param\ String\ name\ \ \ \ \ \ \ input\ for\ name\ field\r\n
+comment10.params=
+comment10.target=void\ listEmployees()
+comment10.text=\r\n\ List\ all\ employees\ of\ company\r\n\r\n
+comment2.params=
+comment2.target=java.lang.String\ getName()
+comment2.text=\r\n\ Return\ name\ of\ company\r\n\r\n\ @return\ \ \ \ name\ String\r\n
+comment3.params=
+comment3.target=java.util.HashMap\ getEmployees()
+comment3.text=\r\n\ Return\ employees\ of\ company\r\n\r\n\ @return\ \ \ \ HashMap<String,\ String>\ employees\r\n
+comment4.params=
+comment4.target=int\ getTotalNumberOfEmployees()
+comment4.text=\r\n\ Return\ number\ of\ employees\r\n\r\n\ @return\ \ \ \ employees.size()\r\n
+comment5.params=origString
+comment5.target=java.lang.String\ formatString(java.lang.String)
+comment5.text=\r\n\ Return\ origString\ with\ leading\ and\ trailing\ spaces\ removed\ and\ all\ caps\r\n\r\n\ @return\ \ \ origString\ \!\=\ null\ ?\ origString.trim().toUpperCase().replaceAll("\\\\s+",\ "\ ")\ \:\ "\ ";\r\n
+comment6.params=name
+comment6.target=java.lang.String\ generateId(java.lang.String)
+comment6.text=\r\n\ Return\ ID\ for\ given\ employee\ name\r\n\r\n\ @return\ \ \ employeeName\ +\ (randomGenerator.nextInt(MAX\ -\ MIN)\ +\ MIN);\r\n
+comment7.params=inputName
+comment7.target=void\ addEmployee(java.lang.String)
+comment7.text=\r\n\ Add\ given\ employee\ name\ to\ HashMap\ of\ employees\r\n\r\n\ @param\ String\ inputName\ \ \ \ \ \ inputName\ String\r\n
+comment8.params=inputName
+comment8.target=void\ removeEmployee(java.lang.String)
+comment8.text=\r\n\ Remove\ given\ employee\ name\ from\ HashMap\ of\ employees\r\n\r\n\ @param\ String\ inputName\ \ \ \ \ \ inputName\ String\r\n
+comment9.params=id
+comment9.target=void\ removeIds(java.lang.String)
+comment9.text=\r\n\ Remove\ given\ id\ from\ HashMap\ of\ employees\r\n\r\n\ @param\ String\ inputName\ \ \ \ \ \ inputName\ String\r\n
+numComments=11

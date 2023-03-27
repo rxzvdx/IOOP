@@ -1,0 +1,96 @@
+A variable is a name for a location in memory that stores data in a specific 
+data type.
+
+The following are all Primitive Types
+Integer numbers: byte, short, int, long
+byte - 8 bit ex. literal: 24
+short - 16 bit ex. literal: 137
+int - 32 bit ex. literal: 5409
+long - 64 bit ex. literal: 423266353L
+
+Real numbers: float, double
+float - single precision floating point ex. literal: 43.889F
+double - double precision floating point ex. literal: 45.63
+
+Other types: char, boolean
+char - a single character (16 bit) ex. literal: 'm' 
+boolean - a boolean value (only holds true or false)
+
+Formal parameters - formal declaration of parameters in method
+
+walk(int steps, boolean toward)
+	amer.walk(10, false);
+
+boolean walk(int steps)
+	return true;
+
+void walk(int steps)  void is a data type; can only be used in method headers in place of
+	return true;  data types. It represents "no return value". *midterm question
+null - It's a value, a memory address of all zeroes. 
+Represents "no object reference" *midterm question
+
+DONT DO:
+void walk(int steps)	pointless break, is not necessary if code is written properly
+	return; 	
+
+Expression - code that gets evaluated
+
+Statement - code that gets executed
+
+Top area of bluej's boxes are classes *midterm question
+Right area of bluej is the code pad *midterm question
+Arrows in classes are called "uses" or "reference arrows" *midterm question
+Where objects exist in bluej is called the "object bench" *midterm question
+
+Everything is public except fields, "private" protects the field
+
+Capitalization means it's a class
+
+If it is a primitive data type that means the value of the 
+primitive data types are stored in the variable itself. *midterm question
+
+The values of a string are not stored in a variable, they're stored elsewhere.
+The variable holds a memory address
+
+Int and integer are NOT the same. Int is a data type.
+
+Anything with double quotes is a string *midterm question
+
+Right click the obejct in bluej to invoke a method 
+OR 
+Put code in code pad
+
+EX: right clicking person1 and clicking "void makeVisible()" would work
+OR typing person1.makeVisible() in the code pad would work. 
+
+Int is the default data type for integer numbers *midterm question
+Double is the default data type for real numbers *midterm question
+
+System.out.print("Hello World"); vs. System.out.println("Hello World");
+println or Print Line, does a character return and makes a new line
+regular print leaves cursor at the end of the string, and allows for 
+continuation on same line. 
+
+NOTE: System.out.println(""); and System.out.print("Hello World /n");
+Do the SAME thing, ln just mmakes things easily readible. 
+*You can also do System.out.println("Hello World /n") for TWO line breaks
+
+/n on newer version of windows and mac does a carriage return and new line
+/n is platform specific
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Movie
+comment0.text=\r\n\ Movie\ class\ creates\ movie\ object\ with\ rating\ and\ title\r\n\r\n\ @author\ Antonio\ Rosado\r\n\ @version\ 4/19/2022\r\n
+comment1.params=title\ rating
+comment1.target=Movie(java.lang.String,\ Rating)
+comment1.text=\r\n\ Initializes\ Movie\ object\ \r\n\ @param\ String\ title\ \ \ \ \ \ \ input\ for\ name\ field\r\n\ @param\ Rating\ rating\ \ \ \ \ \ input\ Rating\ object\r\n
+comment2.params=
+comment2.target=java.lang.String\ getTitle()
+comment2.text=\r\n\ Return\ title\ of\ movie\r\n\r\n\ @return\ \ \ \ title\ String\r\n
+comment3.params=
+comment3.target=java.lang.String\ getRatingString()
+comment3.text=\r\n\ Return\ rating\ of\ movie\r\n\r\n\ @return\ \ \ \ rating\ String\r\n
+numComments=4

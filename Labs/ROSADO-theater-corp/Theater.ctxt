@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Theater
+comment0.text=\r\n\ The\ theater\ class\ creates\ a\ theater\ object\ with\ a\ location\ and\ screen\ assignment.\r\n\r\n\ @author\ Antonio\ Rosado\r\n\ @version\ 4/19/2022\r\n
+comment1.params=location
+comment1.target=Theater(java.lang.String)
+comment1.text=\r\n\ Initializes\ theater\ object\r\n\ @param\ String\ location\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ input\ for\ location\ field\r\n\ @param\ HashMap<Integer,\ Movie>\ screens\ \ \ \ \ \ input\ for\ screen\ HashMap\r\n
+comment2.params=
+comment2.target=java.util.HashMap\ getScreens()
+comment2.text=\r\n\ Return\ title\ of\ movie\r\n\r\n\ @return\ \ \ \ title\ String\r\n
+comment3.params=
+comment3.target=java.lang.String\ getLocation()
+comment3.text=\r\n\ Return\ location\ of\ movie\r\n\r\n\ @return\ \ \ \ location\ String\r\n
+comment4.params=screen\ movie
+comment4.target=void\ addScreen(java.lang.Integer,\ Movie)
+comment4.text=\r\n\ Add\ screen\ integer\ and\ movie\ object\ to\ HashMap\r\n\r\n\ @param\ Integer\ screen\ \ \ \ \ \ \ input\ for\ screen\ integer\r\n\ @param\ Movie\ movie\ \ \ \ \ \ \ \ \ \ input\ for\ Movie\ object\r\n
+numComments=5

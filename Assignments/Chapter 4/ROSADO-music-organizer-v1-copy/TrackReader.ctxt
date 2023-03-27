@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=TrackReader
+comment0.text=\r\n\ A\ helper\ class\ for\ our\ music\ application.\ This\ class\ can\ read\ files\ from\ the\ file\ system\r\n\ from\ a\ given\ folder\ with\ a\ specified\ suffix.\ It\ will\ interpret\ the\ file\ name\ as\ artist/\r\n\ track\ title\ information.\r\n\ \r\n\ It\ is\ expected\ that\ file\ names\ of\ music\ tracks\ follow\ a\ standard\ format\ of\ artist\ name\r\n\ and\ track\ name,\ separated\ by\ a\ dash.\ For\ example\:\ TheBeatles-HereComesTheSun.mp3\r\n\ \r\n\ @author\ David\ J.\ Barnes\ and\ Michael\ K\u00F6lling\r\n\ @version\ 2016.02.29\r\n
+comment1.params=
+comment1.target=TrackReader()
+comment1.text=\r\n\ Create\ the\ track\ reader,\ ready\ to\ read\ tracks\ from\ the\ music\ library\ folder.\r\n
+numComments=2

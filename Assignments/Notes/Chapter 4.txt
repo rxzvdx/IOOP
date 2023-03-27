@@ -1,0 +1,328 @@
+Collections to group objects (ArrayList)
+*restricted to object types
+
+Builds on the abstraction theme to simplify a problem into
+components. 
+
+What if you want a a collection of primtive types?
+Use wrapper classes
+
+COLLECTION 
+Contains a group of songs
+
+ITEMS
+Songs are stores as its filename only
+No pre-defined limit on the number of songs
+
+OPERATIONS
+Song files may be added
+Song files may be deleted
+How many song files are stored
+Get a song filename from the group
+
+import statement needed:
+import java.util.ArrayList;
+
+EX:
+
+import java.util.ArrayList;		// import statement
+				   		// first line of file
+/**				   		// before class definition  
+ * ...
+ */
+public class MusicOrganizer
+{
+    // Storage for an arbitrary number of file names.
+    private ArrayList<String> files;
+ 
+    /**
+     * Perform any initialization required for the
+     * organizer.
+     */
+    public MusicOrganizer()
+    {
+        files = new ArrayList<String>();
+    }
+
+    ...
+}
+
+Duplicate references, not duplicate elements
+
+ArrayList() constructor with no parameters constructs
+an empty list with an initial capacist of ten
+
+Operator for ArrayList is new
+files = new ArrayList<String>();
+
+Don't forget chevrons when using ArrayList<>();
+
+ArrayList(Collection<? extends E> c)
+Constructs a list containing the elements of the specified collection, in the order they are returned by the collection's iterator.
+
+ArrayList(int initialCapacity)
+Constructs an empty list with the specified initial capacity.
+
+Key methods of class ArrayList
+add(item)
+add(index, item) 
+remove(item)
+remove(index)
+get(index)
+size()
+isEmpty()
+
+private ArrayList<Person> 
+new ArrayList<Person>();
+
+add(item) returns boolean true if not null
+add(index, item) inserts specified item at position in list
+remove(item) returns boolean if element is removed or not
+rmeove(index) returns element removed. 
+get(index) parameter check before calling index, returns element 
+size() returns number of elements in list
+isEmpty() must parameter check for null FIRST 
+returns true if list contains no elements
+
+cannot put isEmpty() before null because it will short circuit
+
+index validity check:
+
+public void listFile(int index)
+{
+    if(index >= 0 && index < files.size()) {
+        files.get(index);
+        System.out.println(files.get(index));
+    }
+    else {
+        System.out.println("Error: This is not a valid index.")
+    }
+}
+
+
+isEmpty() is a boolean field, not a method. So it is not required 
+to ask if its true or false in an if/else statement
+
+for-each loop only has one COLON 
+for(ElementType element : collection) 
+{
+	loop body
+}
+ElementType element is a local variable declaration
+for each element in collection, do the things in the loop body
+A collection is required to declare a for each loop, and has to
+examine EVERY element of the collection, it is not selective. 
+
+/**
+ * List all file names in the organizer.
+ */
+public void listAllFiles()
+{
+    for(String filename : files) {
+        System.out.println(filename);
+    }
+} 
+
+ for keyword introduces loop with details between ( )
+ loop variable filename is declared of type String
+ loop body repeated for each element in files ArrayList
+ each time, variable filename holds one of the elements
+ allows access to the object for that particular element
+
+for-each loops 
+
+PROS
+easy to use
+access to ALL items one-by-one
+ability to change the state of the item
+terminates automatically
+selective filter using if-else statements
+actions in body may be complicated with multiple lines
+use on ANY type of collection
+abstraction from details of how handling occurs
+
+CONS
+no index provided
+can NOT stop during looping
+definite iteration of ALL items
+can NOT remove or add elements during loop
+use for collections only
+access must be to ALL items in sequence [0 to size-1]
+
+definite iteration: at the start of the loop *important
+
+
+The while loop
+
+A for-each loop repeats the loop body for every object 
+in a collection
+Sometimes we require more flexibility
+The while loop supports flexibility
+We use a boolean condition to decide whether or not to 
+keep iterating
+May be NO need to search to the end
+This is a very flexible approach
+Not tied to collections
+
+Two ways to say something
+
+while(the keys are missing) 			while(true)
+{
+	look in the next place;
+}
+
+while(not(the keys have been found)) 	while(!(false))
+{
+	look in the next place;
+}
+
+
+for-each == while
+
+public void listAllFiles()
+{
+    for(String filename : files) {
+        System.out.println(filename);
+    }
+} 
+
+public void listAllFiles()
+{
+    int index = 0;
+    while(index < files.size()) {
+        String filename = files.get(index);
+        System.out.println(filename);
+        index++;
+    }
+} 
+while the value of index is less than the size of the collection, 
+get and print the next file name, and then increment index
+
+ALL: definite iteration
+first: indefinite
+
+Elements of the loop:
+1. initialization: declare an index variable
+2. condition: must be expressed correctly
+3. retrieval: may need to fetch each element
+4. mutation: must move to next element explicitly 
+with increment/decrement
+
+while loop
+
+PROS
+can stop at any time during looping
+indefinite iteration of SOME items using loop condition
+may change collection during loop
+use explicit index variable inside and outside of loop
+index variable records location of item at all times
+
+CONS
+more effort to code
+requires index looping variable declaration
+maintain looping variable and manually increment
+correctly determine loop condition for termination
+must .get item using index to access the item
+NOT guaranteed to stop with possible infinite loop
+
+for-each vs while
+
+for-each
+easier to write
+safer because it is guaranteed to stop
+access is handled for you
+Access ALL items without changing collection
+
+while
+don’t have to process entire collection
+doesn’t have to be used with a collection
+take care to watch for an infinite loop
+Access only SOME items, includes a record of the index location, and also could be used for non-collections
+
+searching a collection using searching 
+int index = 0;
+boolean searching = true;
+while(index < files.size() && searching) {
+    String file = files.get(index);
+    if(file.equals(searchString)) {
+        // We don't need to keep looking.
+        searching = false;
+    }
+    else {
+        index++;
+    }
+}
+// Either we found it at index, 
+// or we searched the whole collection.
+
+searching a collection using found 
+int index = 0;
+boolean found = false;
+while(index < files.size() && !found) {
+    String file = files.get(index);
+    if(file.equals(searchString)) {
+        // We don't need to keep looking.
+        found = true;
+    }
+    else {
+        index++;
+    }
+}
+// Either we found it at index, 
+// or we searched the whole collection.
+
+
+public int findFirst(String searchString)
+{
+    int index = 0;
+    boolean searching = true;
+
+    while(searching && index < files.size()) 
+    {
+        String filename = files.get(index);
+        if(filename.contains(searchString))  
+        {                        	// Match found
+            searching = false;  	// Stop searching
+        }
+        else     			// Not found here
+        {				// Keep searching
+            index++;			// Move to next item
+        }
+    }
+
+    if(searching) 			// NO match found
+    {
+        return -1;			// Return out-of-bounds
+    } 					//   index for failures
+    else 
+    {					// Return item index of
+        return index; 		//   where it is found
+    }
+}
+
+String equality 
+
+if(input == "bye") {		This tests identity
+    ...
+}
+
+if(input.equals("bye")) {   This tests equality
+    ...
+}
+
+Important: 
+Always use .equals to test String equality!
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

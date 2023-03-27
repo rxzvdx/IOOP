@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Month
+comment0.text=\r\n\ Month\ gives\ users\ a\ choice\ between\ 1-12\ to\ choose\ a\ month\ \r\n\ and\ returns\ the\ appropiate\ month\ by\ name.\r\n\ @author\ \ Antonio\ Rosado\r\n\ @version\ 2/15/22\r\n
+comment1.params=input
+comment1.target=Month(int)
+comment1.text=\r\n\ Create\ a\ month\ based\ on\ a\ numeric\ value,\ then\ match\ the\ number\ to\ the\ month\ by\ name.\r\n\ @param\ int\ input\ \ \ \ \ \ \ Numeric\ value\ input\ for\ month\r\n
+comment2.params=
+comment2.target=int\ getMonthNumber()
+comment2.text=\ Return\ the\ value\ of\ month\ by\ number.\r\n\ \r\n\ @return\ \ \ \ \ \ \ Month\ numeric\ value\r\n
+comment3.params=
+comment3.target=java.lang.String\ getMonthName()
+comment3.text=\ Return\ the\ name\ of\ month.\r\n\ \r\n\ @return\ \ \ \ \ \ \ Month\ name\r\n
+comment4.params=
+comment4.target=void\ setMonthName()
+comment4.text=\ All\ of\ the\ cases\ the\ month\ can\ be\ based\ on\ numeric\ values.\r\n\ Months\ 1-12\ respectively\ \r\n
+comment5.params=
+comment5.target=void\ printMonth()
+comment5.text=\ Prints\ which\ month\ numeric\ value\ corresponds\ with\ a\ month\ by\ name.\r\n\r\n
+numComments=6

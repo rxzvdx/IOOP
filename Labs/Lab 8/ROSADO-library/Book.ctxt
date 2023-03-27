@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Book
+comment0.text=\r\n\ Book\ class\ creates\ a\ book\ based\ on\ title,\ author,\ and/or\ callNumber\ to\ be\ added\ to\ a\ library.\r\n\r\n\ @author\ Antonio\ Rosado\r\n\ @version\ 3/27/2022\r\n
+comment1.params=author\ title\ callNumber
+comment1.target=Book(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Creates\ a\ book\ based\ on\ author,\ title,\ and\ callNumber\ input\ from\ user\ as\ details.\r\n\ @param\ String\ author\ \ \ \ \ \ \ \ input\ for\ author\ field\r\n\ @param\ String\ title\ \ \ \ \ \ \ \ \ input\ for\ title\ field\r\n\ @param\ String\ callNumber\ \ \ \ input\ for\ callNumber\r\n
+comment2.params=author\ title
+comment2.target=Book(java.lang.String,\ java.lang.String)
+comment2.text=\r\n\ Creates\ a\ book\ based\ on\ author,\ and\ title\ input\ from\ user\ as\ details.\r\n\ @param\ String\ author\ \ \ \ \ \ \ \ input\ for\ author\ field\r\n\ @param\ String\ title\ \ \ \ \ \ \ \ \ input\ for\ title\ field\r\n
+comment3.params=
+comment3.target=java.lang.String\ getAuthor()
+comment3.text=\r\n\ Return\ name\ of\ author\r\n\r\n\ @return\ \ \ \ author\ string\r\n
+comment4.params=
+comment4.target=java.lang.String\ getTitle()
+comment4.text=\r\n\ Return\ title\ of\ book\r\n\r\n\ @return\ \ \ \ title\ string\r\n
+comment5.params=
+comment5.target=java.lang.String\ getCallNumber()
+comment5.text=\r\n\ Return\ callNumber\ of\ book\ object\r\n\r\n\ @return\ \ \ \ callNumber\ string\r\n
+comment6.params=
+comment6.target=java.lang.String\ getBookDetails()
+comment6.text=\r\n\ Return\ details\ of\ book\r\n\r\n\ @return\ \ \ \ title\ +\ "\ \:\ "\ +\ author\ +\ "\ (\ "\ +\ callNumber\ +\ "\ )\ ";\r\n
+comment7.params=author\ title\ callNumber
+comment7.target=void\ setBookDetails(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment7.text=\r\n\ Sets\ details\ of\ the\ book\r\n\r\n\ @param\ String\ author\ \ \ \ \ \ \ \ input\ for\ author\ field\r\n\ @param\ String\ title\ \ \ \ \ \ \ \ \ input\ for\ title\ field\r\n\ @param\ String\ callNumber\ \ \ \ input\ for\ callNumber\r\n
+numComments=8
